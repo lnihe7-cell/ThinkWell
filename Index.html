@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThinkWell - Good Health Advances</title>
+<style>
+@import
+url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&fami
+ly=Inter:wght@300;400;500;600&display=swap');
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Inter'
+, sans-serif;
+background: linear-gradient(135deg, #2d4a3e 0%, #1a3027 100%);
+min-height: 100vh;
+color: #f4f1e8;
+overflow-x: hidden;
+}
+.container {
+max-width: 1400px;
+margin: 0 auto;
+padding: 20px;
+}
+.header {
+text-align: center;
+margin-bottom: 40px;
+padding: 40px 0;
+}
+}
+.logo-container {
+margin-bottom: 20px;
+.brain-logo {
+width: 120px;
+height: 120px;
+margin: 0 auto 30px;
+background: radial-gradient(circle, #d4af37 0%, #b8941f 100%);
+border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+animation: gentle-pulse 4s ease-in-out infinite;
+}
+.brain-tree {
+font-size: 3em;
+color: #2d4a3e;
+text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+@keyframes gentle-pulse {
+0%, 100% { transform: scale(1); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3); }
+50% { transform: scale(1.05); box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4); }
+}
+.main-title {
+font-family: 'Playfair Display'
+, serif;
+font-size: 4em;
+font-weight: 600;
+color: #d4af37;
+margin-bottom: 10px;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+letter-spacing: 2px;
+}
+.subtitle {
+font-family: 'Inter'
+, sans-serif;
+font-size: 1.3em;
+color: #a8c09a;
+letter-spacing: 4px;
+text-transform: uppercase;
+font-weight: 300;
+}
+.dashboard {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 30px;
+margin-bottom: 40px;
+}
+.metric-card {
+background: rgba(212, 175, 55, 0.1);
+backdrop-filter: blur(20px);
+border: 1px solid rgba(212, 175, 55, 0.2);
+border-radius: 20px;
+padding: 35px;
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+position: relative;
+overflow: hidden;
+}
+.metric-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 2px;
+background: linear-gradient(90deg, transparent, #d4af37, transparent);
+transition: opacity 0.3s ease;
+opacity: 0;
+}
+.metric-card:hover {
+transform: translateY(-8px);
+background: rgba(212, 175, 55, 0.15);
+border-color: rgba(212, 175, 55, 0.4);
+box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+}
+}
+.metric-card:hover::before {
+opacity: 1;
+.metric-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 25px;
+}
+.metric-title {
+font-family: 'Playfair Display'
+, serif;
+font-size: 1.4em;
+font-weight: 500;
+color: #d4af37;
+}
+.metric-icon {
+font-size: 2.2em;
+filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
+}
+.metric-value {
+font-family: 'Playfair Display'
+, serif;
+font-size: 3.2em;
+font-weight: 600;
+margin-bottom: 20px;
+background: linear-gradient(135deg, #d4af37 0%, #f4e79d 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+}
+.progress-bar {
+height: 6px;
+background: rgba(212, 175, 55, 0.2);
+border-radius: 3px;
+overflow: hidden;
+margin-bottom: 20px;
+box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.progress-fill {
+height: 100%;
+background: linear-gradient(90deg, #d4af37 0%, #f4e79d 50%, #d4af37 100%);
+border-radius: 3px;
+transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+.metric-insight {
+background: rgba(45, 74, 62, 0.6);
+border-radius: 12px;
+padding: 18px;
+font-size: 0.95em;
+color: #e8f5e8;
+border-left: 3px solid #d4af37;
+line-height: 1.6;
+}
+.ai-section {
+background: rgba(212, 175, 55, 0.1);
+backdrop-filter: blur(20px);
+border: 1px solid rgba(212, 175, 55, 0.2);
+border-radius: 20px;
+padding: 40px;
+margin-bottom: 40px;
+position: relative;
+}
+.ai-header {
+display: flex;
+align-items: center;
+margin-bottom: 30px;
+}
+.ai-avatar {
+width: 70px;
+height: 70px;
+background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #2d4a3e;
+font-size: 2em;
+margin-right: 20px;
+box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+.ai-title {
+font-family: 'Playfair Display'
+, serif;
+font-size: 1.8em;
+color: #d4af37;
+margin-bottom: 5px;
+}
+.ai-subtitle {
+color: #a8c09a;
+font-size: 1em;
+}
+.ai-response {
+background: rgba(45, 74, 62, 0.6);
+padding: 25px;
+border-radius: 15px;
+margin-bottom: 25px;
+border-left: 4px solid #d4af37;
+line-height: 1.7;
+color: #f4f1e8;
+}
+.chat-input {
+display: flex;
+gap: 15px;
+margin-top: 25px;
+}
+.chat-input input {
+flex: 1;
+padding: 18px 25px;
+background: rgba(45, 74, 62, 0.6);
+border: 2px solid rgba(212, 175, 55, 0.3);
+border-radius: 50px;
+font-size: 1em;
+color: #f4f1e8;
+outline: none;
+transition: all 0.3s ease;
+}
+}
+.chat-input input::placeholder {
+color: #a8c09a;
+.chat-input input:focus {
+border-color: #d4af37;
+box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+.chat-input button {
+padding: 18px 35px;
+background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+color: #2d4a3e;
+border: none;
+border-radius: 50px;
+cursor: pointer;
+font-weight: 600;
+font-size: 1em;
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+.chat-input button:hover {
+transform: translateY(-3px);
+box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+.connections {
+background: rgba(212, 175, 55, 0.1);
+backdrop-filter: blur(20px);
+border: 1px solid rgba(212, 175, 55, 0.2);
+border-radius: 20px;
+padding: 40px;
+}
+.connections h3 {
+font-family: 'Playfair Display'
+, serif;
+font-size: 1.8em;
+color: #d4af37;
+margin-bottom: 15px;
+}
+.connections p {
+color: #a8c09a;
+margin-bottom: 30px;
+font-size: 1.1em;
+}
+.device-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+margin-top: 25px;
+}
+.device-card {
+background: rgba(45, 74, 62, 0.6);
+border: 2px solid rgba(212, 175, 55, 0.2);
+border-radius: 15px;
+padding: 25px;
+text-align: center;
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+cursor: pointer;
+position: relative;
+overflow: hidden;
+}
+.device-card:hover {
+background: rgba(45, 74, 62, 0.8);
+transform: translateY(-5px);
+border-color: #d4af37;
+box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+}
+.device-card.connected {
+background: rgba(212, 175, 55, 0.15);
+border-color: #d4af37;
+}
+.device-card.connected::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 3px;
+background: linear-gradient(90deg, #d4af37, #f4e79d, #d4af37);
+}
+.device-icon {
+font-size: 2.8em;
+margin-bottom: 15px;
+display: block;
+filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+}
+.device-name {
+font-family: 'Playfair Display'
+, serif;
+font-weight: 500;
+color: #d4af37;
+margin-bottom: 8px;
+font-size: 1.1em;
+}
+.status-indicator {
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.9em;
+}
+.status-dot {
+display: inline-block;
+width: 8px;
+height: 8px;
+border-radius: 50%;
+margin-right: 8px;
+box-shadow: 0 0 10px currentColor;
+}
+.connected .status-dot { background: #4ade80; color: #4ade80; }
+.disconnected .status-dot { background: #f87171; color: #f87171; }
+.security-badge {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+color: #2d4a3e;
+padding: 15px 25px;
+border-radius: 50px;
+font-size: 0.9em;
+font-weight: 600;
+box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+z-index: 1000;
+}
+@keyframes shimmer {
+0% { opacity: 0.7; }
+50% { opacity: 1; }
+100% { opacity: 0.7; }
+}
+}
+.loading {
+animation: shimmer 2s ease-in-out infinite;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.main-title {
+font-size: 2.5em;
+}
+.dashboard {
+grid-template-columns: 1fr;
+gap: 20px;
+}
+.metric-card, .ai-section, .connections {
+padding: 25px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="logo-container">
+<div class="brain-logo">
+<div class="brain-tree">🌱</div>
+</div>
+</div>
+<h1 class="main-title">ThinkWell</h1>
+<p class="subtitle">Good Health • Advances</p>
+</div>
+<div class="dashboard">
+<div class="metric-card">
+<div class="metric-header">
+<span class="metric-title">Focus Clarity</span>
+<span class="metric-icon">🎯</span>
+</div>
+<div class="metric-value" id="focus-value">78%</div>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 78%"></div>
+</div>
+<div class="metric-insight">
+Your mental clarity has strengthened by 12% this week. The consistent morning
+routine and meditation practice are cultivating deeper focus patterns.
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-header">
+<span class="metric-title">Memory Garden</span>
+<span class="metric-icon">🧠</span>
+</div>
+<div class="metric-value" id="memory-value">85%</div>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 85%"></div>
+</div>
+<div class="metric-insight">
+Exceptional cognitive performance. Your brain training sessions and omega-rich
+nutrition are nurturing robust neural pathways.
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-header">
+<span class="metric-title">Mental Vitality</span>
+<span class="metric-icon">⚡</span>
+</div>
+<div class="metric-value" id="vitality-value">92%</div>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 92%"></div>
+</div>
+<div class="metric-insight">
+Outstanding energy reserves today. Your quality sleep cycle and morning
+movement have energized your cognitive systems beautifully.
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-header">
+<span class="metric-title">Emotional Balance</span>
+<span class="metric-icon">🌸</span>
+</div>
+<div class="metric-value" id="balance-value">88%</div>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 88%"></div>
+</div>
+<div class="metric-insight">
+Harmonious emotional state detected. Your mindfulness practices and social
+connections are fostering inner equilibrium and wellbeing.
+</div>
+</div>
+</div>
+<div class="ai-section">
+<div class="ai-header">
+<div class="ai-avatar">🤖</div>
+<div>
+<h3 class="ai-title">Wellness Intelligence</h3>
+<p class="ai-subtitle">Your personalized brain health advisor</p>
+</div>
+</div>
+<div class="ai-response" id="ai-response">
+<strong>AI Advisor:</strong> I've observed remarkable consistency in your
+wellness journey this week. Your focus metrics show a beautiful upward trend, particularly
+during your morning peak hours. Would you like personalized recommendations to optimize
+your cognitive performance further?
+</div>
+<div class="chat-input">
+<input type="text" placeholder="Ask about your brain health patterns...
+"
+id="user-input">
+<button onclick="askAI()">Inquire</button>
+</div>
+</div>
+<div class="connections">
+<h3>Connected Wellness Devices</h3>
+<p>Your integrated health ecosystem</p>
+<div class="device-grid">
+<div class="device-card connected">
+<span class="device-icon">⌚</span>
+<div class="device-name">Apple Watch</div>
+<div class="status-indicator connected">
+<span class="status-dot"></span>
+Synchronized
+</div>
+</div>
+<div class="device-card connected">
+<span class="device-icon">📱</span>
+<div class="device-name">Fitbit Sense</div>
+<div class="status-indicator connected">
+<span class="status-dot"></span>
+Active
+</div>
+</div>
+<div class="device-card connected">
+<span class="device-icon">🏥</span>
+<div class="device-name">Health App</div>
+<div class="status-indicator connected">
+<span class="status-dot"></span>
+Syncing
+</div>
+</div>
+<div class="device-card disconnected">
+<span class="device-icon">🧘</span>
+<div class="device-name">Muse Headband</div>
+<div class="status-indicator disconnected">
+<span class="status-dot"></span>
+Connect Device
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="security-badge">🛡 End-to-End Encrypted</div>
+<script>
+// Enhanced AI responses with more sophisticated language
+const aiResponses = {
+"focus": "Your focus patterns reveal fascinating insights - there's a strong correlation
+between your evening wind-down rituals and next-day cognitive clarity. I recommend
+maintaining your current 7-8 hour sleep schedule while considering a 10-minute morning
+breathing exercise to further enhance neural coherence.
+"
+,
+"memory": "Remarkable cognitive vitality! Your memory consolidation shows
+exceptional improvement. The synergy between your physical exercise routine, hydration
+habits, and cognitive challenges is creating robust neural plasticity. Consider adding
+omega-3 rich foods to amplify these gains.
+"
+,
+"energy": "Your mental energy architecture is optimally aligned with natural circadian
+rhythms. Peak cognitive performance windows occur between 9 AM - 1 PM. I suggest
+scheduling demanding mental tasks during this golden window for maximum efficiency.
+"
+,
+"mood": "Your emotional landscape shows beautiful stability patterns. The integration
+of social connection, natural light exposure, and mindful movement is cultivating deep
+wellbeing. Consider maintaining at least 20 minutes of morning sunlight for continued mood
+optimization.
+"
+,
+"sleep": "Sleep architecture analysis reveals 18% improvement in deep sleep quality
+this month. Your consistent evening routine and bedroom environment optimization are
+yielding profound cognitive restoration benefits.
+"
+,
+"stress": "Stress resilience patterns indicate excellent adaptation. Your breathing
+practices and nature exposure are creating remarkable nervous system balance. The 4-7-8
+breathing technique during transition moments would further enhance your stress mastery.
+"
+,
+"default": "I'm analyzing the beautiful tapestry of your wellness data. Your overall
+brain health score has flourished by 24% this month - a testament to your dedication to
+holistic wellbeing. Your consistency with nourishing habits is creating remarkable neural
+vitality. Which aspect of your cognitive wellness would you like to explore deeper?"
+};
+function askAI() {
+const input = document.getElementById('user-input');
+const response = document.getElementById('ai-response');
+const query = input.value.toLowerCase();
+if (!query.trim()) return;
+// Show sophisticated thinking animation
+response.innerHTML = '<strong>AI Advisor:</strong> <span
+class="loading">Analyzing your wellness patterns and neural data streams...
+</span>';
+setTimeout(() => {
+let aiResponse = aiResponses.default;
+// Enhanced keyword matching
+for (let key in aiResponses) {
+if (query.includes(key)) {
+aiResponse = aiResponses[key];
+break;
+}
+}
+response.innerHTML =
+input.value = '';
+}, 2000);
+`<strong>AI Advisor:</strong> ${aiResponse}`
+;
+}
+// Enhanced Enter key functionality
+document.getElementById('user-input').addEventListener('keypress'
+, function(e) {
+if (e.key === 'Enter') {
+askAI();
+}
+});
+// Sophisticated real-time metric updates
+function updateMetrics() {
+const metrics = ['focus'
+,
+'memory'
+,
+'vitality'
+,
+'balance'];
+metrics.forEach(metric => {
+const element = document.getElementById(`${metric}-value
+`);
+if (element) {
+const currentValue = parseInt(element.textContent);
+const naturalVariation = (Math.random() - 0.5) * 3; // More subtle changes
+const newValue = Math.max(65, Math.min(100, currentValue +
+naturalVariation));
+// Smooth transition effect
+setTimeout(() => {
+element.textContent = Math.round(newValue) + '%';
+}, Math.random() * 1000);
+}
+});
+}
+// Update metrics every 45 seconds for more realistic experience
+setInterval(updateMetrics, 45000);
+// Enhanced device interaction
+document.querySelectorAll('
+.device-card').forEach(card => {
+card.addEventListener('click'
+, function() {
+if (this.classList.contains('disconnected')) {
+this.classList.remove('disconnected');
+this.classList.add('connected');
+const statusElement = this.querySelector('
+.status-indicator');
+statusElement.className = 'status-indicator connected';
+statusElement.innerHTML = '<span class="status-dot"></span>Connected';
+// Add subtle success animation
+this.style.transform = 'scale(1.05)';
+setTimeout(() => {
+this.style.transform = '';
+}, 300);
+}
+});
+});
+// Add gentle parallax effect to brain logo
+window.addEventListener('scroll'
+, () => {
+const scrolled = window.pageYOffset;
+const brainLogo = document.querySelector('
+.brain-logo');
+if (brainLogo) {
+brainLogo.style.transform =
+`translateY(${scrolled * 0.1}px) scale(${1 + scrolled *
+0.0001})`
+;
+}
+});
+</script>
+</body>
+</html>
